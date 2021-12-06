@@ -29,4 +29,4 @@
 ***
 - Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13 
 
-[Скрипт]
+[Скрипт](https://github.com/Ilnur77/QA_courses_Homeworks/tree/main/HM_01/script)
