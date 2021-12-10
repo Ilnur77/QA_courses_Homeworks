@@ -1,4 +1,4 @@
-1.ID.
+1. ID.
 2.Summary
 3.Steps to reproduce
 4.Actual result
