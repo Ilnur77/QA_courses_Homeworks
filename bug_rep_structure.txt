@@ -1,0 +1,12 @@
+1. ID.
+2.Summary
+3.Steps to reproduce
+4.Actual result
+5.Expected result
+6.Environment
+7.Status
+8.Priority
+9.Severity
+10.Author
+11.Assignment
+12.Attachments
