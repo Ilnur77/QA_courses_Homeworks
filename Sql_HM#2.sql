@@ -1,5 +1,6 @@
---1.Таблица employees
-    --1.1)Создать таблицу employees
+--1.РўР°Р±Р»РёС†Р° employees
+ 
+--1.1)РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ employees
       
 create table employees(
 id serial primary key,
@@ -8,7 +9,7 @@ employee_name varchar(50) not null
 
 select * from employees;
 
---1.2)Наполнить таблицу employee 70 строками.
+--1.2)РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ employee 70 СЃС‚СЂРѕРєР°РјРё.
 
 insert into employees(employee_name)
 values ('Salvador Vaughn'), ('Margaret Graham'), ('Raul Allen'),
@@ -36,15 +37,15 @@ values ('Salvador Vaughn'), ('Margaret Graham'), ('Raul Allen'),
 		('Jerry Robertson'),('Peter Murphy'),('Kenneth Smith'),
 		('William Webb');
 	
---2.Таблица salary
+--2.РўР°Р±Р»РёС†Р° salary
 
-	--2.1)Создать таблицу salary
+	--2.1)РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ salary
 create table salary(	
 id serial  primary key,
 monthly_salary Int not null
 );
 		
-	--2.2)Наполнить таблицу salary 15 строками
+	--2.2)РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ salary 15 СЃС‚СЂРѕРєР°РјРё
 insert into salary(monthly_salary)
 values (1000),(1100),(1200),
 	   (1300),(1400),(1500),
@@ -54,9 +55,9 @@ values (1000),(1100),(1200),
 
 select * from salary;
 
- --3.Таблица employee_salary
+ --3.РўР°Р±Р»РёС†Р° employee_salary
 
-	--3.1)Создать таблицу employee_salary
+	--3.1)РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ employee_salary
 create table employee_salary(
 id serial  primary key,
 employee_id Int unique not null, 
@@ -65,8 +66,8 @@ salary_id Int not null
 
 select * from employee_salary; 
 
---3.2)Наполнить таблицу employee_salary 40 строками:
-   --в 10 строк из 40 вставить несуществующие employee_id
+--3.2)РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ employee_salary 40 СЃС‚СЂРѕРєР°РјРё:
+   --РІ 10 СЃС‚СЂРѕРє РёР· 40 РІСЃС‚Р°РІРёС‚СЊ РЅРµСЃСѓС‰РµСЃС‚РІСѓСЋС‰РёРµ employee_id
 
 insert into employee_salary(employee_id, salary_id)
 values (71,3), (75,8), (81,8),(86,1), (92,11),
@@ -80,9 +81,9 @@ values (71,3), (75,8), (81,8),(86,1), (92,11),
 
 select * from employee_salary;
 
--- 4.Таблица roles
+-- 4.РўР°Р±Р»РёС†Р° roles
 
-   --4.1)Создать таблицу roles
+   --4.1)РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ roles
 
 create table roles (
 id serial  primary key,
@@ -91,12 +92,12 @@ role_name int unique not null
 
 select * from roles;
    
-	--4.2)Поменять тип столба role_name с int на varchar(30)
+	--4.2)РџРѕРјРµРЅСЏС‚СЊ С‚РёРї СЃС‚РѕР»Р±Р° role_name СЃ int РЅР° varchar(30)
 
 alter table roles 
 alter column role_name type varchar(30);
 
---4.3)Наполнить таблицу roles 20 строками:
+--4.3)РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ roles 20 СЃС‚СЂРѕРєР°РјРё:
 insert into roles(role_name)
 values ('Junior Python developer'),
 ('Middle Python developer'),
@@ -119,14 +120,14 @@ values ('Junior Python developer'),
 ('Middle Automation QA engineer'),
 ('Senior Automation QA engineer');
 
---5.Таблица roles_employee
+--5.РўР°Р±Р»РёС†Р° roles_employee
 
-	--5.1)Создать таблицу roles_employee
+	--5.1)РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ roles_employee
 
 create table roles_employee(
 id serial  primary key,
-employee_id Int not null unique, --(внешний ключ для таблицы employees, поле id)
-role_id Int not null, --(внешний ключ для таблицы roles, поле id)
+employee_id Int not null unique, --(РІРЅРµС€РЅРёР№ РєР»СЋС‡ РґР»СЏ С‚Р°Р±Р»РёС†С‹ employees, РїРѕР»Рµ id)
+role_id Int not null, --(РІРЅРµС€РЅРёР№ РєР»СЋС‡ РґР»СЏ С‚Р°Р±Р»РёС†С‹ roles, РїРѕР»Рµ id)
 foreign key (employee_id)
 	references employees(id),
 foreign key (role_id)
@@ -135,7 +136,7 @@ foreign key (role_id)
 
 select * from roles_employee;
 
-	--5.2)Наполнить таблицу roles_employee 40 строками
+	--5.2)РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ roles_employee 40 СЃС‚СЂРѕРєР°РјРё
 
 insert into roles_employee(employee_id, role_id)
 values (1,5),(2,16),(3,11),(4,16),(5,3),
